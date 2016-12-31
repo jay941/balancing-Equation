@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+  <link rel="stylesheet" href="bower_components/md-data-table/dist/md-data-table-style.css">
+  <link rel="stylesheet" href="bower_components/angular-material-icons/angular-material-icons.css">
+  <style>
+  table {
+      border-collapse: collapse;
+      width: 100%;
+  }
+
+  th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+  }
+
+  tr:hover{background-color:#f5f5f5}
+  </style>
+
+</head>
+
+<body ng-app="NextTool" ng-controller="nextController">
+
+
+
+  <div layout="column" style="height:100%;" ng-cloak>
+
+    <section layout="row" flex>
+
+      <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
+
+        <md-toolbar class="md-theme-indigo">
+          <h1 class="md-toolbar-tools">Chemistry balancing equations</h1>
+        </md-toolbar>
+        <md-content layout-padding >
+            <table class="mdl-data-table" cellspacing="0">
+              <thead style="overflow:auto;">
+                <tr ng-repeat="eqa in data" ng-click="selectedRow(eqa)">
+
+                  <td>{{eqa.eqa}}</td>
+                </tr>
+              </thead>
+            </table>
+
+          </p>
+        </md-content>
+
+      </md-sidenav>
+      <div>
+        <h1>{{equation}}</h1>
+        <div ng-repeat="common in com track by $index">
+          <md-button id="$index" ng-click="checkBalance($event)">{{common}}</button>
+        </div>
+        <div ng-repeat="common1 in com1 track by $index">
+          <md-button id="$index" ng-click="makeProduct($event)">{{common1}}</button>
+        </div
+
+
+
+
+
+
+</body>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/md-data-table/dist/md-data-table.js"></script>
+<script src="bower_components/md-data-table/dist/md-data-table-templates.js"></script>
+<script src="bower_components/angular-material-icons/angular-material-icons.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+
+
+
+
+<script src="app.js"></script>
+<script src="controller/nextController.js">
+</script>
+
+</html>
